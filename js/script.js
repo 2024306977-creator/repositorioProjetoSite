@@ -12,4 +12,22 @@ document.addEventListener("DOMContentLoaded",() => {
             navMenu.classList.remove("active");
         });
     });
+    //Estrutura do Carrossel;
+    const slides = document.querySelectorAll(".carousel-slide");
+    const dot = document.querySelectorAll(".dot");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    let slideAtual = 0;
+    let slideIntervalo;
+
+    function showSlide(index){
+        slides.forEach((slide) => slide.classList.remove("active"));
+        dot.forEach((dot) => dot.classList.remove("active"));
+
+        slideAtual = (index + slides.length) % slides.length;
+
+        slides[slideAtual].classList.add("active");
+        dot[slideAtual].classList.add("active")
+    };
+
 });//Fechamento do evento carregar página html; 
