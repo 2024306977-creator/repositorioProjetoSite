@@ -57,7 +57,16 @@ document.addEventListener("DOMContentLoaded",() => {
         prevSlide();
         stopSlide();
         startSlide();
-    })
+    });
 
+    dot.forEach((dots) =>{
+        dots.addEventListener("click", (e) => {
+            const index = parseInt(e.target.getAttribute("data-index"));
+            showSlide(index);
+            stopSlide();
+            startSlide();
+        });
+    });
+    //Iniciar os slides de forma automática
     startSlide();
 });//Fechamento do evento carregar página html; 
